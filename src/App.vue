@@ -1,23 +1,21 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+
+const num = ref(2)
+function clickMe() {
+  num.value++
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+    {{ num }}
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <button type="button" v-on:click="clickMe">CLICK</button>
+  </div>
 </template>
 
-<style scoped>
+<!--<style scoped>
 header {
   line-height: 1.5;
 }
@@ -44,4 +42,4 @@ header {
     flex-wrap: wrap;
   }
 }
-</style>
+</style>-->
