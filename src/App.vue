@@ -1,45 +1,20 @@
 <script setup>
-import { ref } from 'vue'
-
-const num = ref(2)
-function clickMe() {
-  num.value++
-}
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    {{ num }}
+  <div class="container">
+    <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink> |
+          <RouterLink to="/lesson1">第一週課程內容</RouterLink> |
+          <RouterLink to="/homework1">第一週作業</RouterLink> |
+          <!--<RouterLink to="/week3">第三週作業</RouterLink> |-->
+        </nav>
+      </div>
+    </header>
 
-    <button type="button" v-on:click="clickMe">CLICK</button>
+    <RouterView />
   </div>
 </template>
-
-<!--<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>-->
